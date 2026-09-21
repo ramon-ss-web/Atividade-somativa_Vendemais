@@ -1,0 +1,49 @@
+name: CI Pipeline — VendeMais Lead Enrichment
+
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+
+jobs:
+  validate-and-test:
+    name: Lint, Validação de Workflows e Smoke Tests
+    runs-on: ubuntu-latest
+
+
+    steps:
+      # 1. Baixa o código do repositório
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+
+      # 2. Configura o ambiente Python
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+
+      # 3. Validação Sintática Rápida de Arquivos JSON
+      - name: Validar Sintaxe JSON dos Workflows
+        run: |
+          echo "🔍 Verificando integridade de todos os arquivos JSON..."
+          for file in $(find . -name "*.json" -not -path "*/.*"); do
+            jq empty "$file" || exit 1
+          done
+          echo "✅ Todos os arquivos JSON passaram no linting do jq."
+
+
+      # 4. Executa o Teste de Estrutura dos Workflows (Smoke Test 1)
+      - name: Rodar Validação Estrutural de Workflows
+        run: |
+          python tests/validate_workflows.py
+
+
+      # 5. Executa os Testes Unitários de Lógica com Mock (Smoke Test 3)
+      - name: Rodar Testes de Lógica e LLM Mockado
+        run: |
+          python tests/test_enrichment_logic.py
