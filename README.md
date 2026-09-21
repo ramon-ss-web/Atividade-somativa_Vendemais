@@ -62,6 +62,18 @@ curl -X POST http://localhost:5678/webhook/lead-enrich-local \
   -d '{"deal_id":"9876543210","company":"Acme Logística SA"}'
 ```
 
+Também é possível disparar o webhook de teste com o script Python incluído na
+raiz do projeto. No n8n, abra o workflow local e clique em **Execute Workflow**
+antes de executar:
+
+```bash
+python simular_webhook.py
+```
+
+O script envia o payload para `http://localhost:5678/webhook-test/lead-enrich-local`.
+Esse endpoint só fica disponível enquanto o workflow está em modo de teste; para
+um workflow publicado, use o endpoint `/webhook/lead-enrich-local` acima.
+
 ### Mirror n8n com serviços reais
 
 Importe `n8n-mirror/workflows/vendemais-enrich-v0.json`, configure as
