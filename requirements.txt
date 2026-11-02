@@ -1,0 +1,3 @@
+# Testes da Etapa 1 usam só a biblioteca padrão.
+# Arquivo existe para o Actions e para o avaliador ver o runtime declarado.
+# python>=3.10

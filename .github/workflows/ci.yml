@@ -1,0 +1,21 @@
+# CI — custo zero em repositório público.
+# Não publica o Make.com. Só garante o contrato dos workflows + lógica mockada.
+name: ci
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validar blueprints Make e n8n
+        run: python tests/validate_workflows.py
+      - name: Lógica de enrichment (LLM mockado)
+        run: python tests/test_enrichment_logic.py
