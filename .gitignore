@@ -1,6 +1,9 @@
 # Env (nunca comitar credencial)
 .env
 .env.local
+*.local
+*.pem
+*.key
 *.env.backup
 
 # n8n (mirror local)
