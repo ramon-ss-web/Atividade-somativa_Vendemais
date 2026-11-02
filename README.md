@@ -5,7 +5,7 @@
 
 > Sistema herdado da estagiária Joana (Make.com). Etapa 1: o **mesmo** fluxo de 5 passos, publicado com custo zero via mirror n8n — **sem reescrita**. Identidade, datas e URLs: [`docs/publicacao.md`](./docs/publicacao.md).
 
-**URL pública:** ainda **PENDENTE** (cole em `docs/publicacao.md` após o Space).  
+**URL pública:** ainda **PENDENTE**. O Space Docker está em [Ramonss86/vendemais-lead-enrich](https://huggingface.co/spaces/Ramonss86/vendemais-lead-enrich), runtime pausado por cota `cpu-basic` (limit 0). Enquanto o stage não for RUNNING, use o curl local da seção B. Detalhe em [`docs/publicacao.md`](./docs/publicacao.md).  
 **Smoke (path fixo):** `POST /webhook/lead-enrich-local`  
 **Repositório:** [ramon-ss-web/Atividade-somativa_Vendemais](https://github.com/ramon-ss-web/Atividade-somativa_Vendemais)  
 **CI:** [`.github/workflows/ci.yml`](./.github/workflows/ci.yml) — [![ci](https://github.com/ramon-ss-web/Atividade-somativa_Vendemais/actions/workflows/ci.yml/badge.svg)](https://github.com/ramon-ss-web/Atividade-somativa_Vendemais/actions/workflows/ci.yml)
@@ -116,7 +116,7 @@ O Make.com **não roda local**; o `n8n-mirror/` existe por isso.
 | Ambiente | Onde preencher | Estado em 2026-09-21 |
 | -------- | -------------- | -------------------- |
 | GitHub + Actions | [`docs/publicacao.md`](./docs/publicacao.md) | no ar |
-| Hugging Face Spaces (webhook) | [`docs/publicacao.md`](./docs/publicacao.md) | PENDENTE (Space atual é static, não n8n) |
+| Hugging Face Spaces (webhook) | [`docs/publicacao.md`](./docs/publicacao.md) | Space Docker criado; runtime PAUSED (cota). Curl público ainda não. |
 | Vídeo 3–5 min | idem + [`docs/roteiro-demonstracao.md`](./docs/roteiro-demonstracao.md) | PENDENTE |
 
 ---

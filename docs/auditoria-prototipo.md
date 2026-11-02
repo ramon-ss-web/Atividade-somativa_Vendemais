@@ -106,7 +106,7 @@ Escreva em 5 linhas o contrato com o avaliador:
 
 | Pergunta | Sim/Não | Comentário |
 | -------- | ------- | ---------- |
-| Consigo publicar uma URL que executa o **mesmo** encadeamento de 5 passos? | Parcial | Encadeamento existe no n8n local (`lead-enrich-local`). URL HTTPS ainda PENDENTE em `docs/publicacao.md`. |
+| Consigo publicar uma URL que executa o **mesmo** encadeamento de 5 passos? | Parcial | A imagem publica o fluxo offline (curl local 200, score 60). O Space Docker existe, mas a conta não tem cota `cpu-basic` — o HTTPS ainda não executa. Ver `docs/publicacao.md`. |
 | Segredos saíram do Git? | Parcial | Smoke não usa chave. O JSON v0 ainda contém `sk-EXEMPLO-…` (S2 — anti-padrão herdado, remover antes do push público se o avaliador fizer `git grep`). |
 | CI quebra se o blueprint perder um módulo? | Sim (local) | `validate_workflows.py` + workflow Actions. Confirmar run verde após o primeiro push. |
 | C4 L1 e L2 batem com o deploy real? | Parcial | Mermaid no repo. PNG Excalidraw + URL do Space ainda faltam. |

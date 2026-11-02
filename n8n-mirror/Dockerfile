@@ -3,13 +3,22 @@
 # Imagem pinada — mesma dívida/decisão do docker-compose.yml (não use :latest).
 FROM n8nio/n8n:2.28.7
 
+USER root
+COPY workflows/vendemais-enrich-local.json /opt/vendemais/vendemais-enrich-local.json
+COPY start-space.sh /opt/vendemais/start-space.sh
+RUN chmod 755 /opt/vendemais/start-space.sh \
+    && chown -R node:node /opt/vendemais
+USER node
+
 ENV N8N_PORT=5678 \
-    N8N_PROTOCOL=http \
     GENERIC_TIMEZONE=America/Sao_Paulo \
     N8N_DIAGNOSTICS_ENABLED=false \
-    N8N_PERSONALIZATION_ENABLED=false
+    N8N_PERSONALIZATION_ENABLED=false \
+    N8N_PROXY_HOPS=1 \
+    N8N_SECURE_COOKIE=false \
+    N8N_ENCRYPTION_KEY=vendemais-etapa1-offline-demo
 
 EXPOSE 5678
 
-# WEBHOOK_URL deve ser o HTTPS público do Space (secret/variável do host),
-# senão o path do webhook interno não bate com o curl do avaliador.
+# WEBHOOK_URL é montada em start-space.sh (SPACE_HOST no HF; localhost no teste da imagem).
+ENTRYPOINT ["/opt/vendemais/start-space.sh"]

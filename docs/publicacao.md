@@ -24,9 +24,9 @@ Cole o valor real na coluna da direita. Enquanto estiver `PENDENTE`, o avaliador
 | ----- | ----- |
 | GitHub (HTTPS) | https://github.com/ramon-ss-web/Atividade-somativa_Vendemais |
 | Actions (CI) | https://github.com/ramon-ss-web/Atividade-somativa_Vendemais/actions/workflows/ci.yml |
-| Hugging Face Space (app) | PENDENTE — o Space [Ramonss86/Vendemais](https://huggingface.co/spaces/Ramonss86/Vendemais) é SDK **static** (`https://ramonss86-vendemais.static.hf.space`). Não é o n8n Docker. Não usar essa URL no curl. |
-| URL pública (webhook) | PENDENTE — só depois do Space Docker (`n8nio/n8n:2.28.7`) publicado |
-| SHA publicado no Space | PENDENTE — `git rev-parse --short HEAD` depois do primeiro deploy Docker |
+| Hugging Face Space (app) | https://huggingface.co/spaces/Ramonss86/vendemais-lead-enrich — SDK **docker**, imagem `n8nio/n8n:2.28.7`, commit `f5fdfc5`. Runtime **PAUSED**: `Quota exceeded for flavor cpu-basic (limit=0)`. A conta free não hospeda Docker. O Space [Ramonss86/Vendemais](https://huggingface.co/spaces/Ramonss86/Vendemais) continua static e **não** é o webhook. |
+| URL pública (webhook) | PENDENTE — o host `https://ramonss86-vendemais-lead-enrich.hf.space` existe, mas o processo n8n não subiu. Não usar esse host no curl até o stage ficar RUNNING. |
+| SHA publicado no Space | `f5fdfc5` (arquivos no Space; o container não chegou a rodar) |
 | Vídeo unlisted (3–5 min) | PENDENTE |
 
 **Smoke público (depois de colar a URL):**

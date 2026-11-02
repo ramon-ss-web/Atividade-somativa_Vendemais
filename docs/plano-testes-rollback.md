@@ -35,7 +35,7 @@ Definição: teste **rápido**, ponta a ponta do que o avaliador vê, sem suíte
 | Dado | `deal_id=9876543210` (determinístico no mock) |
 | Esperado | HTTP 200; `status`/`icp_match_score` presentes; score **60** no fluxo local documentado pela Joana |
 | Evidência | JSON + print da execução no n8n (Executions) — pasta `docs/evidencias/` |
-| Última execução | pendente · URL ainda PENDENTE em `docs/publicacao.md` (até lá, o mesmo curl em `localhost:5678`) |
+| Última execução | 2026-11-02 · imagem `n8n-mirror/Dockerfile` no laptop: HTTP 200, `icp_match_score` 60. URL pública ainda bloqueada (Space PAUSED, cota `cpu-basic` limit 0). |
 
 ### Smoke 3 — Pipeline quebra quando o contrato quebra (regressão)
 

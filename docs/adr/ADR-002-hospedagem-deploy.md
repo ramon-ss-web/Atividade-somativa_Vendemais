@@ -30,7 +30,7 @@ Problema: **qual host e qual pipeline de deploy para a Etapa 1?**
 
 **Hugging Face Spaces, SDK Docker**, imagem alinhada a `n8nio/n8n:2.28.7`.
 
-- URL pública: ver tabela em [`docs/publicacao.md`](../publicacao.md) (PENDENTE até o primeiro Space)
+- URL pública: ver tabela em [`docs/publicacao.md`](../publicacao.md). Space Docker criado em 2026-11-02; runtime pausado por cota `cpu-basic` (limit 0) — o webhook ainda não responde.
 - Webhook smoke (offline): `POST /webhook/lead-enrich-local`
 - Webhook “real” (se houver secrets): `POST /webhook/lead-enrich`
 - Variáveis no Space (não no Git): `N8N_BASIC_AUTH` / owner password, `WEBHOOK_URL=https://<space>/`, chaves opcionais.

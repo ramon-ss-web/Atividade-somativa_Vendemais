@@ -10,6 +10,8 @@ Formato: [Keep a Changelog](https://keepachangelog.com/pt-BR/1.0.0/) · versiona
 - CI GitHub Actions (`.github/workflows/ci.yml`) rodando `tests/validate_workflows.py` e `tests/test_enrichment_logic.py`.
 - `n8n-mirror/Dockerfile` para publicação em Hugging Face Spaces (free tier).
 - `docs/publicacao.md` como fonte única de URL/identidade.
+- `n8n-mirror/start-space.sh`: em todo boot importa e publica `vendemais-enrich-local.json` (o disco do Space é efêmero).
+- Space Docker `Ramonss86/vendemais-lead-enrich` (commit `f5fdfc5`). Runtime não sobe: cota `cpu-basic` da conta é 0.
 
 ### Changed
 
