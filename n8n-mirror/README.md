@@ -64,6 +64,11 @@ o scheduler está **OFF**, então roda na mão.
 
 ## Subir o mirror
 
+Para usar o mirror real com credenciais injetadas no container, copie
+`.env.example` para `.env` nesta pasta e preencha as chaves localmente. O arquivo
+`.env` e ignorado pelo Git; nao versione credenciais reais. A versao offline
+nao precisa de credenciais.
+
 ```bash
 cd n8n-mirror
 docker compose up -d
